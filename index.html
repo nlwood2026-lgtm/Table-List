@@ -33,9 +33,6 @@
 
 <h1>Find Your Table</h1>
 
-<input type="file" id="csvFile" accept=".csv">
-<br><br>
-
 <input type="text" id="searchBox" placeholder="Enter first or last name">
 
 <div id="results"></div>
@@ -43,20 +40,14 @@
 <script>
 let guests = [];
 
-document.getElementById("csvFile").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        const text = e.target.result;
-        parseCSV(text);
-    };
-
-    reader.readAsText(file);
-});
+fetch("guests.csv")
+    .then(response => response.text())
+    .then(csvText => {
+        parseCSV(csvText);
+    })
+    .catch(error => {
+        console.error("Error loading guest list:", error);
+    });
 
 function parseCSV(csvText) {
     const lines = csvText.trim().split("\n");
@@ -73,7 +64,7 @@ function parseCSV(csvText) {
         });
     }
 
-    alert(`${guests.length} guests loaded.`);
+    console.log(`${guests.length} guests loaded.`);
 }
 
 document.getElementById("searchBox").addEventListener("input", function() {
