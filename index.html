@@ -22,14 +22,11 @@
         body::before {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        
-            background: url("cala-lily-border.png") no-repeat center center;
-            background-size: contain; /* or "100% 100%" if it should stretch */
-        
+            inset: 20px;
+
+            border: 40px solid transparent;
+            border-image: url("border.png") 100 stretch;
+
             pointer-events: none;
             z-index: 0;
         }
