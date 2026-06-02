@@ -14,6 +14,34 @@
             color: #333;
             text-align: center;
             padding: 40px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 350px;
+            background: url("calla-top-1.webp") no-repeat;
+            background-size: contain;
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 350px;
+            height: 350px;
+            background: url("calla-bottom-2.png") no-repeat;
+            background-size: contain;
+            opacity: 0.25;
+            pointer-events: none;
         }
         .container {
             max-width: 600px;
