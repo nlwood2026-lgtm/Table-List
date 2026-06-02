@@ -19,14 +19,23 @@
             position: relative;
             overflow-x: hidden;
         }
-
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,.1);
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        
+            background: url("border.png") no-repeat center center;
+            background-size: contain; /* or "100% 100%" if it should stretch */
+        
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container, h1, #results, input {
+            position: relative;        
+            z-index: 1;
         }
         h1 {
             font-family: "Cormorant Garamond", serif;
