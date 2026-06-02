@@ -19,13 +19,13 @@
             position: relative;
             overflow-x: hidden;
         }
-        body::before {
+       body::before {
             content: "";
             position: fixed;
-            inset: 20px;
+            inset: 0;
 
-            border: 40px solid transparent;
-            border-image: url("calla-lily-border.png") 100 stretch;
+            background: url("calla-lily-border.png") center center no-repeat;
+            background-size: contain;
 
             pointer-events: none;
             z-index: 0;
