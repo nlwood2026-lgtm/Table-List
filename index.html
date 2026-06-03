@@ -30,18 +30,26 @@
             pointer-events: none;
             z-index: 0;
         }
-        .container, h1, #results, input {
-            position: relative;        
-            z-index: 1;
+        .container {
+            max-width: 500px;
+            margin: 80px auto;
+            padding: 30px;
+
+            background: rgba(255,255,255,0.9);
+            border-radius: 15px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,.1);
         }
         h1 {
             font-family: "Cormorant Garamond", serif;
             font-size: 3rem;
             color: #8b6f47;
+            margin-bottom: 20 px;
         }
 
         input {
             width: 100%;
+            box-sizing: border-box;
             padding: 12px;
             border: 1px solid #ddd;
             border-radius: 8px;
