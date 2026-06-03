@@ -7,28 +7,18 @@
     <style>
         body {
             font-family: "Montserrat", sans-serif;
-             background: linear-gradient(
-                to bottom,
-                #f8f4ef,
-                #ffffff
-            );
+
+            background-image: url("calla-lily-border.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
             color: #333;
             text-align: center;
-            padding: 40px;
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-       body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-
-            background: url("calla-lily-border.png") center center no-repeat;
-            background-size: contain;
-
-            pointer-events: none;
-            z-index: 0;
+            margin: 0;
+            padding: 40px;
         }
         .container {
             max-width: 500px;
